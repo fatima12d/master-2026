@@ -50,7 +50,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/master2:${{ steps.version.outputs.VERSION}}
+            ${{ secrets.DOCKER_USERNAME }}/master2:${{ steps.version.outputs.VERSION }}
             ${{ secrets.DOCKER_USERNAME }}/master2:latest
-
-
