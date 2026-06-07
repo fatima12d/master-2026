@@ -28,7 +28,7 @@ jobs:
       #Etape Generer la version a partir du numero run
       - name: Set version
         id: version
-        run: echo "VERSION=1.0.${{ github.run.number}}" >> $GITHUB_OUTPUT
+        run: echo "VERSION=1.0.${{ github.run_number }}" >> $GITHUB_OUTPUT
       # Étape 3 — Builder le JAR
       # Équivalent TP3 : mvn package -DskipTests
       - name: Build JAR
