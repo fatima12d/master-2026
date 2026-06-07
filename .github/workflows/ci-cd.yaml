@@ -25,7 +25,10 @@ jobs:
         with:
           java-version: '25'
           distribution: 'temurin'
-
+      #Etape Generer la version a partir du numero run
+      - name: Set version
+        id: version
+        run: echo "VERSION=1.0.${{ github.run.number}}" >> $GITHUB_OUTPUT
       # Étape 3 — Builder le JAR
       # Équivalent TP3 : mvn package -DskipTests
       - name: Build JAR
@@ -46,5 +49,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/master2:latest
+          tags:
+            ${{ secrets.DOCKER_USERNAME }}/master2:${{ steps.version.outputs.VERSION}}
+            ${{ secrets.DOCKER_USERNAME }}/master2:latest
+
 
