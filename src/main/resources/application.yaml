@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: master2
+  datasource:
+    url: jdbc:postgresql://localhost:5432/master2
+    username: postgres
+    password: passer
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+
+
+
