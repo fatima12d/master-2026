@@ -2,9 +2,9 @@ spring:
   application:
     name: master2
   datasource:
-    url: jdbc:postgresql://localhost:5432/master2
-    username: postgres
-    password: passer
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
